@@ -1,0 +1,9 @@
+.explorer-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.explorer-menu h1 {
+  color: #262626;
+  font-size: 500;
+}

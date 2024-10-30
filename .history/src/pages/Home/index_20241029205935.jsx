@@ -4,12 +4,11 @@ import { Header } from "../../components/Header";
 import "./styles.css";
 
 export const Home = () => {
-  const [category, setCategory] = useState("All");
-
+  const [category, setCategory] = useState("All");;
   return (
     <div>
       <Header />
-      <ExplorerMenu category={category} setCategory={setCategory}/>
+      <ExplorerMenu />
     </div>
   );
 };
