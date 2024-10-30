@@ -10,8 +10,8 @@ export const Home = () => {
   return (
     <div>
       <Header />
-      <ExplorerMenu category={category} setCategory={setCategory} />
-      <FoodDisplay category={category} />
+      <ExplorerMenu category={category} setCategory={setCategory}/>
+      <FoodDisplay category={category}/>
     </div>
   );
 };

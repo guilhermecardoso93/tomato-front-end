@@ -5,25 +5,31 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  
+
   const addCart = (itemId) => {
-    if (!cartItems[itemId]) {
-      setCartItems((prev) => ({ ...prev, [itemId]: 1 }));
-    } else {
-      setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
-    }
+    setCartItems((prev) => ({
+      ...prev,
+      [itemId]: (prev[itemId] || 0) + 1, // Adiciona 1 ao item ou inicializa com 1
+    }));
   };
 
-  const removeFromCart = (itemId) => {
-    setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] - 1 }));
+  const removeCart = (itemId) => {
+    setCartItems((prev) => {
+      const newCart = { ...prev, [itemId]: Math.max((prev[itemId] || 0) - 1, 0) };
+      
+      if (newCart[itemId] === 0) {
+        delete newCart[itemId]; // Remove item do carrinho se quantidade é 0
+      }
+      return newCart;
+    });
   };
 
   const contextValue = {
     food_list,
+    removeCart,
+    addCart,
     cartItems,
     setCartItems,
-    addCart,
-    removeFromCart,
   };
 
   useEffect(() => {
