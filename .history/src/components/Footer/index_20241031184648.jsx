@@ -1,0 +1,17 @@
+import { assets } from "../../assets/assets";
+import "./styles.css";
+
+export const Footer = () => {
+  return (
+    <footer id="footer">
+      <div className="footer-container">
+        <div className="footer-left">
+          <img src={assets.logo} alt="" />
+          <p>Lorem Ipsimdihfaihfiasbdnfiasbndifonasdifnadfionasdofnaio</p>
+        </div>
+        <div className="footer-center"></div>
+        <div className="footer-right"></div>
+      </div>
+    </footer>
+  );
+};
