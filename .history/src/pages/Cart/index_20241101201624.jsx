@@ -64,9 +64,7 @@ export const Cart = () => {
               </b>
             </div>
           </div>
-          <button onClick={() => navigate("/order")}>
-            PROCEED TO CHECKOUT
-          </button>
+          <button onClick={() => navigate('/order')}>PROCEED TO CHECKOUT</button>
         </div>
         <div className="cart-promocode">
           <div>

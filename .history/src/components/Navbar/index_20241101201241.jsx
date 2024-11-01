@@ -7,7 +7,7 @@ import "./styles.css";
 
 export const Navbar = ({ login, setLogin }) => {
   const [menu, setMenu] = useState("Home");
-  const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const {getTotalCartAmount,token,setToken} = useContext(StoreContext)
 
   return (
     <div className="navbar">
@@ -51,7 +51,7 @@ export const Navbar = ({ login, setLogin }) => {
           <Link to="/cart">
             <img src={assets.basket_icon} alt="" />
           </Link>
-          <div className={getTotalCartAmount() === 0 ? "" : "dot"}></div>
+          <div className={getTotalCartAmount()===0?"":"dot"}></div>
         </div>
         <button onClick={() => setLogin(true)}>sign in</button>
       </div>
